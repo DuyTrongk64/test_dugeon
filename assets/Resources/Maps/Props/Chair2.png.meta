@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "88df2874-6a3d-4805-92d4-36285a0da7cf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 129,
+  "height": 114,
+  "platformSettings": {},
+  "subMetas": {
+    "Chair2": {
+      "ver": "1.0.4",
+      "uuid": "074d5926-e208-4100-b6f1-124d7ea466c0",
+      "rawTextureUuid": "88df2874-6a3d-4805-92d4-36285a0da7cf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 127,
+      "height": 114,
+      "rawWidth": 129,
+      "rawHeight": 114,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

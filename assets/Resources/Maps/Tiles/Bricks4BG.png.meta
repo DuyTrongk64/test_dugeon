@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "0a099a32-756d-4cbe-996c-7f87a7ce08a7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 512,
+  "height": 512,
+  "platformSettings": {},
+  "subMetas": {
+    "Bricks4BG": {
+      "ver": "1.0.4",
+      "uuid": "5b4acb1e-c0a5-4a6b-94f0-b85fd3cbe52c",
+      "rawTextureUuid": "0a099a32-756d-4cbe-996c-7f87a7ce08a7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 512,
+      "height": 512,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

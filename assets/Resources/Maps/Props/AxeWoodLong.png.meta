@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "855c6e31-309a-4b3e-b214-0fc4973cb89e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 344,
+  "height": 542,
+  "platformSettings": {},
+  "subMetas": {
+    "AxeWoodLong": {
+      "ver": "1.0.4",
+      "uuid": "ee2c33a6-db37-485f-9286-462cc6960d8b",
+      "rawTextureUuid": "855c6e31-309a-4b3e-b214-0fc4973cb89e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 2.5,
+      "trimX": 7,
+      "trimY": 1,
+      "width": 329,
+      "height": 535,
+      "rawWidth": 344,
+      "rawHeight": 542,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

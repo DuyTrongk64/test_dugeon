@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "08ca96fe-0890-4aac-91ba-36c821fbaf3c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Knight-Walk-Sheet-4": {
+      "ver": "1.0.4",
+      "uuid": "fb61e9db-3548-42b7-86b3-b12a41467f21",
+      "rawTextureUuid": "08ca96fe-0890-4aac-91ba-36c821fbaf3c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": -8.5,
+      "trimX": 16,
+      "trimY": 17,
+      "width": 34,
+      "height": 47,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

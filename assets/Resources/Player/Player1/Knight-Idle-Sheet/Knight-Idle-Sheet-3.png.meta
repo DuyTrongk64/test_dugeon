@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "e41af66b-a16b-4618-a626-3169306afd02",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "Knight-Idle-Sheet-3": {
+      "ver": "1.0.4",
+      "uuid": "3c21e29c-0b19-4149-a0e8-730056c68200",
+      "rawTextureUuid": "e41af66b-a16b-4618-a626-3169306afd02",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 3,
+      "offsetY": -6,
+      "trimX": 19,
+      "trimY": 12,
+      "width": 32,
+      "height": 52,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

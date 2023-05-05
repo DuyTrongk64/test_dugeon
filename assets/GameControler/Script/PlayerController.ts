@@ -16,10 +16,10 @@ export default class NewClass extends cc.Component {
     Jump_Force = 0;
 
     @property(cc.Animation)
-    animation_node: cc.Animation;
+    animation_node: cc.Animation = null;
 
-    @property jumpHeight: number = 500;
-    @property jumpDuration: number = 0.3;
+    @property jumpHeight: number = 0;
+    @property jumpDuration: number = 0;
     
     private Rigid_Body;
     private on_the_ground: boolean;
@@ -30,6 +30,8 @@ export default class NewClass extends cc.Component {
     private isMove: boolean;
     private isGoLeft: boolean;
     private isGoRight: boolean;
+
+    private isAnimating: boolean;
 
     onLoad(){
         //set physics
@@ -51,16 +53,17 @@ export default class NewClass extends cc.Component {
         this.isGoLeft = true;
         this.isGoRight = false;
         
+        this.isAnimating = false;
         
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onKeyUp, this);
 
-        this.jumpAction = cc.sequence(
-            cc.jumpBy(this.jumpDuration, cc.v2(0, 0), this.jumpHeight, 1),
-            cc.callFunc(() => {
-                this.Rigid_Body.linearVelocity = cc.v2(this.Rigid_Body.linearVelocity.x, 0);
-            }, this)
-        );
+        // this.jumpAction = cc.sequence(
+        //     cc.jumpBy(this.jumpDuration, cc.v2(0, 0), this.jumpHeight, 1),
+        //     cc.callFunc(() => {
+        //         this.Rigid_Body.linearVelocity = cc.v2(this.Rigid_Body.linearVelocity.x, 0);
+        //     }, this)
+        // );
     }
 
     onDestroy() {
@@ -81,6 +84,10 @@ export default class NewClass extends cc.Component {
                 }
                 this.isIdle = false;
                 this.isMove = true;
+                if(!this.isAnimating) {
+                    this.isAnimating = true;
+                    this.runAnimation();
+                }
                 break;
             case cc.macro.KEY.d:
             case cc.macro.KEY.right:
@@ -92,20 +99,26 @@ export default class NewClass extends cc.Component {
                 }
                 this.isIdle = false;
                 this.isMove = true;
+                if(!this.isAnimating) {
+                    this.isAnimating = true;
+                    this.runAnimation();
+                }
                 break;
             case cc. macro.KEY.w:
             case cc.macro.KEY.up:
                 if(this.on_the_ground){
-                    if (this.jumpAction.isDone()) {
-                        this.Rigid_Body.applyLinearImpulse(cc.v2(0, this.jumpHeight), this.Rigid_Body.getWorldCenter(), true);
-                        this.node.runAction(this.jumpAction);
-                    }
-                    this.Rigid_Body.applyForceToCenter(cc.v2(0,this.Jump_Force),true);
+                    // if (this.jumpAction.isDone()) {
+                    //     this.Rigid_Body.applyLinearImpulse(cc.v2(0, this.jumpHeight), this.Rigid_Body.getWorldCenter(), true);
+                    //     this.node.runAction(this.jumpAction);
+                    //     this.jumpAction.start();
+                    // }
+                    this.Rigid_Body.applyLinearImpulse(cc.v2(0, this.jumpHeight), this.Rigid_Body.getWorldCenter(), true);
+
+                    //this.Rigid_Body.applyForceToCenter(cc.v2(0,this.Jump_Force),true);
                     this.on_the_ground = false;
                 }
                 break;
         }
-        this.runAnimation();  
     }
 
     onKeyUp(event) {
@@ -113,28 +126,34 @@ export default class NewClass extends cc.Component {
         switch(event.keyCode) {
             case cc.macro.KEY.a:
             case cc.macro.KEY.d:
+            case cc.macro.KEY.left:
+            case cc.macro.KEY.right:
                 this.Direction = 0;
                 this.isIdle = true;
                 this.isMove = false;
+                this.isAnimating = false;
+                this.runAnimation();
                 break;
-        }
-        this.runAnimation();  
+        } 
     }
 
     runAnimation(){
         if(this.isIdle){
             this.animation_node.play("Idle");
+            
         }
+
         if(!this.isIdle){
             this.animation_node.stop("Idle");
         }
 
         if(this.isMove){
-            this.animation_node.play("Walk")
+            this.animation_node.play("Walk");
+            console.log('1\n');
         }
 
         if(!this.isMove){
-            this.animation_node.stop("Walk")
+            this.animation_node.stop("Walk");
         }
     }
 
@@ -143,8 +162,7 @@ export default class NewClass extends cc.Component {
             this.Direction<0&&this.Rigid_Body.linearVelocity.x>-this.Velocity_Max_X){
                 //this.Rigid_Body.applyForceToCenter(cc.v2(this.Direction*this.Walk_Force,0),true);
                 this.Rigid_Body.linearVelocity = cc.v2(this.Direction*this.Walk_Force*dt,this.Rigid_Body.linearVelocity.y);
-            }
-        
+            }        
     }
 
     onBeginContact(contact,selfCollider, otherCollider){
@@ -155,7 +173,7 @@ export default class NewClass extends cc.Component {
     }
 
     update (dt) {
-        this.moveAround(dt); 
-            
+        this.moveAround(dt);
+     
     }
 }
